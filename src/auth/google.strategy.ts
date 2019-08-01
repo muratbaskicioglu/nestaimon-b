@@ -7,8 +7,8 @@ import { ConfigService } from '../config/config.service';
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
   constructor(config: ConfigService) {
     super({
-      clientID: config.get('CLIENT_ID'),
-      clientSecret: config.get('CLIENT_SECRET'),
+      clientID: config.clientId,
+      clientSecret: config.clientSecret,
       callbackURL: 'http://localhost:3000/auth/google/callback',
       passReqToCallback: true,
       scope: ['profile'],
