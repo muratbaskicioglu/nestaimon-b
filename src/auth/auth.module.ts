@@ -3,6 +3,7 @@ import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { GoogleStrategy } from './google.strategy';
 import { ConfigModule } from '../config/config.module';
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [ConfigModule],
@@ -10,6 +11,7 @@ import { ConfigModule } from '../config/config.module';
   providers: [
     AuthService,
     GoogleStrategy,
+    JwtStrategy,
   ],
 })
 export class AuthModule {}
