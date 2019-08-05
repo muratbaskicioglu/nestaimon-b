@@ -29,6 +29,7 @@ export class ConfigService {
       API_AUTH_ENABLED: Joi.boolean().required(),
       CLIENT_ID: Joi.string(),
       CLIENT_SECRET: Joi.string(),
+      JWT_SECRET_KEY: Joi.string(),
     });
 
     const { error, value: validateEnvConfig } = Joi.validate(
@@ -62,5 +63,9 @@ export class ConfigService {
 
   get clientSecret(): string {
     return this.envConfig.CLIENT_SECRET;
+  }
+
+  get jwtSecretKey(): string {
+    return this.envConfig.JWT_SECRET_KEY;
   }
 }
